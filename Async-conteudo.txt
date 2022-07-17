@@ -1,0 +1,66 @@
+O que é Assincronicidade?
+
+    Algo que não ocorre ou não se efetiva ao mesmo tempo
+
+
+Sincrono vs async
+
+Sincrono: A equipe se reune todo dia em determinado horario para trabalhar
+Async : A equipe trabalha todo dia no horário que quiser
+
+O Javascript roda de maneira sincrona por padrão
+
+Mas é possivel usar a async 
+
+
+- Promises
+    Objeto de processamento assincrono
+        Literalmente uma promessa
+            ex: vc compra um ingresso para algo 
+                essa compra é a promessa
+                    pode ser resolvido
+                    pode ser rejeitado
+
+Ela tem 3 estados
+
+Pending - prometida
+Fulfilled - completada
+Rejected - rejeitada 
+
+
+Estrutura
+
+const myPromise = new Promise((resolve, reject) => {
+    window.setTimeout(() => {
+        resolve(console.log('Resolvida!'));
+    }, 2000);
+});
+
+await myPrimise
+.then((result) => result + ' passando pelo then')
+.then((result) +> result + ' e agora acabaou!')
+.cath((err) => console.log(err.message));
+
+// Após 2 segundos, retornará o valor
+// "Resolvida passando pelo then e agora  acabou!"
+
+
+Async/await
+
+As funções async precisam dessas duas palavras
+    await é feito para trabalhar com Promises
+    como JS é Sincrono se não usar await ele não vai resolver
+
+async function resolvePromise() {
+    const myPromise = new Promise((resolve, reject) => {
+        window.setTimeout(() => {
+            resolve('Resolvida');
+        }, 3000);
+    });
+    const resolved = await myPromise
+    .then((result) => result + ' passando pelo then')
+    .then((result) => result + ' eagora acabou!)
+    .catch((err) => console.log(err.message));
+}
+
+// Pode ser utilizado com try..catch

@@ -1,0 +1,41 @@
+Consumo de APIs
+
+O que são?
+
+API - Application Programming Inferface
+
+    Uma forma de intermediar os resultados do back-end com o que é apresentado no front-end.
+    Você pode acessar elas por uma URL
+
+    JSON muito utilizado em APIs para mandar uma API
+        Formato de Objeto
+
+Fetch - Estrela do consumo de APIs
+
+fetch(url, options)
+    .then(response => responde.json())
+    .then(json => console.log(json))
+
+// retorna uma Promise
+
+
+ex Operações no banco de dados
+(POST, GET, PUT, DELETE, ETC)
+
+fetch('https://endereco-api.com/', {
+    method: 'GET',
+    cache: 'no-cache',
+})
+
+    .then(response => responde.json())
+    .then(json => console.log(json))
+
+
+fetch('https://endereco-api.com/', {
+    method: 'POST',
+    cache: 'no-cache',
+    body: JSON.stringify(data)
+})
+
+    .then(response => responde.json())
+    .then(json => console.log(json))
